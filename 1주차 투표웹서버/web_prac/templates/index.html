@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2025 당신의 선택</title>
+  </head>
+  <body>
+    <h1>2025 당신의 선택은?</h1>
+    <p>♥클릭으로 사랑을 표현하세요♥</p>
+    <form action="/vote" method="post">
+      <p><button name="vote" value="Option A">100억 부자 변성환</button></p>
+          <img
+      src="{{ url_for('static', filename='성환.jfif') }}"
+      alt="투표 이미지"
+      width="120px"
+    /><br />
+      <p><button name="vote" value="Option B">무일푼 차은우</button></p>
+          <img
+      src="{{ url_for('static', filename='은우.jpg') }}"
+      alt="투표 이미지"
+      width="150px"
+    /><br />
+    </form>
+
+    <h2>현재 투표 결과</h2>
+    <ul>
+    <li>100억 부자 변성환: {{ votes["Option A"] }} 표 ({{ percent_a }}%)</li>
+    <br>
+    <li>무일푼 차은우: {{ votes["Option B"] }} 표 ({{ percent_b }}%)</li>
+    </ul>
+
+    <!-- 이미지 표시 -->
+  </body>
+</html>

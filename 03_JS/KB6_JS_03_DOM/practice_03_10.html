@@ -1,0 +1,43 @@
+<!-- 실습 간단한 TodoList 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <input type = "text" id="userInput" placeholder=" 할 일을 입력하세요 ">
+    <button id="btn">할 일 추가</button>
+
+    <ul id="todolist"></ul>
+
+    <script>
+      const list = document.querySelector('#todolist');
+      const btn = document.querySelector('#btn');
+      const userInput = document.querySelector('#userInput');
+      btn.addEventListener('click', () => {
+        // user의 입력이 없으면 alert 
+        if (userInput.value == ""){
+            return alert("할 일을 입력하세요.");
+        }
+
+        // <ul>에 붙일 자식 만들기
+        const liEl = document.createElement('li');
+        liEl.textContent = userInput.value;
+        
+        // 클릭하면 todo list 에서 삭제하도록 
+        liEl.addEventListener('click', (e)=>{
+            e.target.remove();}
+        );
+
+        // <ul> 에 자식 추가
+        list.appendChild(liEl);
+
+        // userInput 초기화
+        userInput.value = '';
+      });
+
+
+    </script>
+  </body>
+</html>

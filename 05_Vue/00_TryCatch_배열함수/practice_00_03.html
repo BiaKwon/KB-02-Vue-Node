@@ -1,0 +1,30 @@
+<!-- try-catch로 비동기 통신 처리 실습 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="header">Hello, Protocol</h1>
+    <button onclick="fetchData()">백엔드 통신 경험하기</button>
+  </body>
+  <script>
+    const headerEl = document.querySelector('.header');
+    const endPoint =
+      'https://port-0-tetz-night-back-m5yo5gmx92cc34bc.sel4.cloudtype.app/test';
+    async function fetchData() {
+      try {
+        // 에러가 예상되는 코드 -> 통신
+        // 변수 response -> request/ res -> req
+        const response = await fetch(endPoint);
+        const data = await response.json();
+        console.log(data);
+        headerEl.textContent = data.message;
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,41 @@
+<!-- 이벤트 핸들러 활용 실습 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{msg}}</h1>
+      <input type="text" v-model="inputNum" />
+      <button @click="check">확인</button>
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            inputNum: 0,
+            random: parseInt(Math.random() * 20),
+            msg: '랜덤으로 생성된 숫자를 맞춰보세요!',
+          };
+        },
+        methods: {
+          check() {
+            if (this.inputNum < this.random) {
+              this.msg = 'UP';
+            } else if (this.inputNum > this.random) {
+              this.msg = 'DOWN';
+            } else {
+              this.msg = '정답!';
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

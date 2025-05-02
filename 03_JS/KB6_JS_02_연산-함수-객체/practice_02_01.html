@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 39</title>
+
+    <script>
+      const id = 'dayeon';
+      const pw = '991211';
+
+      const idInput = prompt('ID를 입력하세요.');
+      const pwInput = prompt('비밀번호를 입력하세요.');
+      if (idInput == id && pwInput == pw) {
+        console.log('로그인 성공');
+      } else if (pwInput == pw) {
+        console.log('ID가 틀렸습니다.');
+      } else if (idInput == id) {
+        console.log('PW가 틀렸습니다.');
+      } else {
+        console.log('망했어요');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

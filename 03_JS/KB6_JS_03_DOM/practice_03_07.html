@@ -1,0 +1,34 @@
+<!-- classList 예제 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transition-duration: 0.5s;
+        }
+        .pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box1</div>
+    <script>
+        const boxEl = document.querySelector('.box');
+        // box 를 클릭하면 색을 바꾸게 함
+        boxEl.addEventListener('click', function (){
+            if(boxEl.classList.contains('pink'))
+                boxEl.classList.remove('pink');
+            else
+                boxEl.classList.add('pink');
+        });
+    </script>
+</body>
+</body>
+</html>
